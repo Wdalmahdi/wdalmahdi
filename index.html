@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WD Almahdi - SECURENET</title>
 
-  <!-- Google Font -->
+  <!-- خط أنيق -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- AOS Animation -->
+  <!-- AOS Animation Library -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
   <style>
@@ -27,22 +27,23 @@
       height: 100vh;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       color: white;
       text-align: center;
       padding: 50px 20px;
+      position: relative;
+      transition: background-image 1s ease-in-out;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      position: relative;
-      transition: background-image 1s ease-in-out;
+      align-items: center;
     }
 
     header::before {
       content: "";
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4); /* تظليل فوق الصورة */
+      z-index: 1;
     }
 
     header * {
@@ -166,12 +167,12 @@
     <a href="https://wa.me/2999999" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
   </section>
 
-  <!-- التذييل -->
+  <!-- تذييل -->
   <footer>
     جميع الحقوق محفوظة ©️ 2025 WD Almahdi - SECURENET
   </footer>
 
-  <!-- AOS -->
+  <!-- مكتبة AOS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({
@@ -180,10 +181,10 @@
     });
   </script>
 
-  <!-- سلايدر الخلفية -->
+  <!-- سكربت تغيير الخلفية -->
   <script>
-    const hero = document.getElementById('hero');
-    const images = ['slider1.jpg', 'slider2.jpg', 'slider3.jpg'];
+    const hero = document.querySelector('#hero');
+    const images = ['slider1.jpg', 'slider2.jpg', 'slider3.jpg']; // الصور المحلية
     let index = 0;
 
     function changeBackground() {
@@ -191,8 +192,9 @@
       index = (index + 1) % images.length;
     }
 
-    changeBackground();
-    setInterval(changeBackground, 5000);
+    changeBackground(); // أول صورة
+    setInterval(changeBackground, 5000); // تتغير كل 5 ثواني
   </script>
+
 </body>
 </html>
