@@ -8,10 +8,10 @@
   <!-- خط أنيق -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- AOS Animation Library -->
+  <!-- AOS Animation -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
   <style>
@@ -24,10 +24,28 @@
     }
 
     header {
-      background: linear-gradient(to left, #0d6efd, #084298);
-      color: white;
+      position: relative;
+      height: 350px;
       text-align: center;
-      padding: 50px 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      transition: background-image 1s ease-in-out;
     }
 
     header img {
@@ -39,6 +57,9 @@
     header h1 {
       margin: 10px 0;
       font-size: 32px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 15px;
+      border-radius: 10px;
     }
 
     section {
@@ -105,8 +126,8 @@
 
 <body>
 
-  <!-- رأس الصفحة -->
-  <header data-aos="fade-down">
+  <!-- رأس الصفحة مع خلفية متغيرة -->
+  <header id="hero" data-aos="fade-down">
     <img src="rr.jpeg" alt="شعار WD Almahdi - SECURENET" />
     <h1>WD Almahdi - SECURENET - لحلول المراقبة والشبكات</h1>
     <p>خبرة - أمان - احترافية</p>
@@ -148,10 +169,10 @@
 
   <!-- تذييل -->
   <footer>
-    جميع الحقوق محفوظة © 2025 WD Almahdi - SECURENET
+    جميع الحقوق محفوظة ©️ 2025 WD Almahdi - SECURENET
   </footer>
 
-  <!-- سكربت AOS -->
+  <!-- مكتبة AOS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({
@@ -159,5 +180,22 @@
       once: true
     });
   </script>
+
+  <!-- سلايدر الخلفية -->
+  <script>
+    const hero = document.querySelector('#hero');
+    const images = ['slider1.jpg', 'slider2.jpg', 'slider3.jpg'];
+    let index = 0;
+
+    function changeBackground() {
+      hero.style.setProperty('--image', url('${images[index]}'));
+      hero.style.backgroundImage = url('${images[index]}');
+      index = (index + 1) % images.length;
+    }
+
+    changeBackground(); // أول مرة
+    setInterval(changeBackground, 5000); // كل 5 ثواني
+  </script>
+
 </body>
 </html>
