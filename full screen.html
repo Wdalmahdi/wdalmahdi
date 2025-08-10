@@ -1,81 +1,80 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>سلايدر خلفية فول سكرين</title>
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
-      font-family: 'Cairo', sans-serif;
-      direction: rtl;
-      background: #000;
-    }
-    #hero {
-      position: relative;
-      height: 100vh;
-      width: 100vw;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: background-image 1s ease-in-out;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-    #hero > * {
-      position: relative;
-      z-index: 2;
-    }
-    #hero img {
-      width: 150px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    #hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    #hero p {
-      font-size: 1.2rem;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WD Almahdi - SECURENET</title>
+<style>
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    background-color: #f4f6f9;
+    color: #333;
+  }
+  header {
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 1s ease-in-out;
+  }
+  /* طبقة التعتيم */
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  /* محتوى الهيدر فوق التعتيم */
+  header > * {
+    position: relative;
+    z-index: 2;
+  }
+  header img {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  header h1 {
+    margin: 10px 0;
+    font-size: 32px;
+  }
+  header p {
+    font-size: 20px;
+  }
+</style>
 </head>
 <body>
 
-  <header id="hero">
-    <img src="rr.jpeg" alt="شعار WD Almahdi - SECURENET" />
-    <h1>WD Almahdi - SECURENET - لحلول المراقبة والشبكات</h1>
-    <p>خبرة - أمان - احترافية</p>
-  </header>
+<header id="hero">
+  <img src="rr.jpeg" alt="شعار WD Almahdi - SECURENET" />
+  <h1>WD Almahdi - SECURENET - لحلول المراقبة والشبكات</h1>
+  <p>خبرة - أمان - احترافية</p>
+</header>
 
-  <script>
-    const hero = document.getElementById('hero');
-    const images = ['1.jpg', '2.jpg', '3.jpg']; // أسماء الصور يجب أن تكون صحيحة ومساراتها دقيقة
-    let index = 0;
+<script>
+  const hero = document.getElementById('hero');
+  const images = ['1.jpg', '2.jpg', '3.jpg']; // صور الخلفية المتغيرة
+  let index = 0;
 
-    function changeBackground() {
-      hero.style.backgroundImage = url('${images[index]}');
-      index = (index + 1) % images.length;
-    }
+  function changeBackground() {
+    hero.style.backgroundImage = url('${images[index]}');
+    index = (index + 1) % images.length;
+  }
 
-    changeBackground();
-    setInterval(changeBackground, 5000);
-  </script>
+  changeBackground(); // عرض الصورة الأولى فوراً
+  setInterval(changeBackground, 5000); // تغيير كل 5 ثواني
+</script>
 
 </body>
 </html>
