@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WD Almahdi - SECURENET</title>
 
-  <!-- خط أنيق -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- AOS Animation Library -->
+  <!-- AOS Animation -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
   <style>
@@ -27,23 +27,23 @@
       height: 100vh;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000; /* لون أسود خلفي إذا الصورة ما تحمل */
       color: white;
       text-align: center;
       padding: 50px 20px;
-      position: relative;
-      transition: background-image 1s ease-in-out;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      position: relative;
+      transition: background-image 1s ease-in-out;
     }
 
     header::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.4); /* تظليل فوق الصورة */
-      z-index: 1;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     header * {
@@ -153,10 +153,10 @@
   <!-- قسم التواصل -->
   <section id="contact" class="contact" data-aos="zoom-in">
     <h2><i class="fas fa-phone"></i> تواصل معنا</h2>
-    <p>📞 999999999</p>
-    <p>📞 09999994</p>
-    <a href="tel:99999"><i class="fas fa-phone"></i> اتصل الآن</a>
-    <a href="https://wa.me/2999999" target="_blank"><i class="fab fa-whatsapp"></i> واتساب مباشر</a>
+    <p>📞 99999999</p>
+    <p>📞 99999904</p>
+    <a href="tel:0912345209"><i class="fas fa-phone"></i> اتصل الآن</a>
+    <a href="https://wa.me/24999999909" target="_blank"><i class="fab fa-whatsapp"></i> واتساب مباشر</a>
   </section>
 
   <!-- شبكات التواصل -->
@@ -164,15 +164,15 @@
     <h2><i class="fas fa-share-alt"></i> تابعنا على</h2>
     <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
     <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> إنستغرام</a>
-    <a href="https://wa.me/2999999" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+    <a href="https://wa.me/249912345209" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
   </section>
 
-  <!-- تذييل -->
+  <!-- التذييل -->
   <footer>
     جميع الحقوق محفوظة ©️ 2025 WD Almahdi - SECURENET
   </footer>
 
-  <!-- مكتبة AOS -->
+  <!-- AOS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({
@@ -181,10 +181,10 @@
     });
   </script>
 
-  <!-- سكربت تغيير الخلفية -->
+  <!-- سلايدر الخلفية -->
   <script>
-    const hero = document.querySelector('#hero');
-    const images = ['r.jpg', 't.jpg', 'y.jpg']; // الصور المحلية
+    const hero = document.getElementById('hero');
+    const images = ['slider1.jpg', 'slider2.jpg', 'slider3.jpg']; // ضع الصور بنفس المجلد
     let index = 0;
 
     function changeBackground() {
@@ -192,9 +192,8 @@
       index = (index + 1) % images.length;
     }
 
-    changeBackground(); // أول صورة
-    setInterval(changeBackground, 5000); // تتغير كل 3 ثواني
+    changeBackground(); // عرض أول صورة مباشرة
+    setInterval(changeBackground, 5000); // التغيير كل 5 ثواني
   </script>
-
 </body>
 </html>
